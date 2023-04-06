@@ -59,7 +59,9 @@ docker cp submit.py d8dabd93e04c:/opt/bitnami/spark/bin
 
 ###  DATAVIZ
 
-Pour la data Viz nous avons choisis ...
+Pour la data Viz une fois le consumer effectuer , il faut exporter les données sur la base Mongo puis les exploité. Ensuite on peux les analysé grâce a PowerBI. 
+
+
 
 
 
