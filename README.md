@@ -57,7 +57,9 @@ Copier le submit dans ce dossier
 docker cp submit.py d8dabd93e04c:/opt/bitnami/spark/bin
 ````
 
+###  DATAVIZ
 
+Pour la data Viz nous avons choisis ...
 
 
 
