@@ -77,6 +77,18 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 /src/co
 
 Pour la data Viz une fois le consumer effectuer , il faut exporter les données sur la base Mongo puis les exploité. Ensuite on peux les analysé grâce a un script. 
 
+Voici ce qui a été réaliser.
+
+
+![image](https://user-images.githubusercontent.com/118398845/230433909-4aef944f-3f00-4097-ae1e-e627bed2d321.png)
+
+![image](https://user-images.githubusercontent.com/118398845/230434124-c5ccb812-3b4f-4818-8758-f461e8519761.png)
+
+
+![image](https://user-images.githubusercontent.com/118398845/230434253-fd2ccb8d-ffd8-41cf-98c1-a0b67c1540e3.png)
+
+![image](https://user-images.githubusercontent.com/118398845/230434376-f7ba1fe1-7ce1-4e54-8eb4-48bc0dc074d9.png)
+
 
 
 
