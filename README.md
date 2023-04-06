@@ -38,6 +38,17 @@ Ensuite nous allons lancer le topic qui a été créer avec cette commande
 ````
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test_topic --property "parse.key=true" --property "key.separator=:"
 ````
+![image](https://user-images.githubusercontent.com/118398845/230250807-2e1401a5-1837-4a8f-a85d-c591173babb8.png)
+
+
+#### Producer Velib
+
+![image](https://user-images.githubusercontent.com/118398845/230250350-cf4f870c-9393-445a-804f-b956169d2678.png)
+
+#### Producer Météo
+![image](https://user-images.githubusercontent.com/118398845/230251231-0b47fd66-98b0-4567-a889-694d716c6357.png)
+
+
 
 ### SPARK-MASTER
 
