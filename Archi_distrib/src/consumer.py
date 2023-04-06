@@ -1,35 +1,22 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import *
-from pyspark.sql.functions import from_json, col
 
+KAFKA_BOOTSTRAP_SERVERS = "kafka:9092"
+KAFKA_TOPIC = "test_topic"
 
-spark = SparkSession.builder.appName('ML-Projet').master('spark://spark-master:7077').getOrCreate()
-spark.sparkContext.setLogLevel('WARN')
-KAFKA_BOOTSTRAP_SERVERS = 'kafka:9092'
-KAFKA_TOPIC = 'myproject'
+spark = SparkSession.builder.appName("read_test_straeam").getOrCreate()
 
-SCHEMA = StructType
-([
-        StructField("Entity",StringType())
-])
+# Reduce logging
+spark.sparkContext.setLogLevel("WARN")
 
-df = spark.readStream \
-.format("kafka") \
-.option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS) \
-.option("subscribe", KAFKA_TOPIC) \
-.load() \
-# .select(from_json(col("value").cast("string"), SCHEMA).alias("data")) \
-# .selectExpr("data.Entity") \
-df.printSchema()
+df = spark.readStream.format("kafka") \
+    .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS) \
+    .option("subscribe", KAFKA_TOPIC) \
+    .option("startingOffsets", "earliest") \
+    .load()
 
-schema = StructType().add("Entity", StringType())
-personneString = df.selectExpr("CAST(value AS STRING)")
-personnedf = personneString.select(from_json(col("value"),schema).alias("data")).select("data.*")
-
-personnedf.writeStream.format("console").outputMode("append").start().awaitTermination()
-# df.writeStream \
-# .format("console") \
-# .outputMode("update")\
-# .option("truncate", "false") \
-# .start() \
-# .awaitTermination()
+df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") \
+    .writeStream \
+    .format("console") \
+    .outputMode("append") \
+    .start() \
+    .awaitTermination()
