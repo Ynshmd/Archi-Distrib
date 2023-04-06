@@ -10,7 +10,7 @@ API_URL = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=donne
 
 
 
-TOPIC_NAME = "topic_test2"
+TOPIC_NAME = "test_topic"
 
 
 
