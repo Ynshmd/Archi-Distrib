@@ -10,7 +10,7 @@ API_URL = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-dispo
 
 
 # Kafka topic to send data to
-TOPIC_NAME = "topic_test"
+TOPIC_NAME = "test_topic"
 
 
 
