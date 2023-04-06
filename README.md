@@ -68,9 +68,14 @@ Copier le submit dans ce dossier
 docker cp submit.py d8dabd93e04c:/opt/bitnami/spark/bin
 ````
 
+Lancer le Consumer
+
+````
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 /src/consumer.py
+````
 ###  DATAVIZ
 
-Pour la data Viz une fois le consumer effectuer , il faut exporter les données sur la base Mongo puis les exploité. Ensuite on peux les analysé grâce a PowerBI. 
+Pour la data Viz une fois le consumer effectuer , il faut exporter les données sur la base Mongo puis les exploité. Ensuite on peux les analysé grâce a un script. 
 
 
 
